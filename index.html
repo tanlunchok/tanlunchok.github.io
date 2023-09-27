@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <script src="assets/js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $(".btn").click(function() {
+            window.location = $(this).attr("href");
+          });
+        });
+    </script>
 </head>
 <body>
     <div class="container p-5 text-center">   
