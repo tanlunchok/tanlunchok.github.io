@@ -132,20 +132,31 @@ function create ()
 
 function update ()
 {
+    /* const cursors = this.input.keyboard.createCursorKeys();
+
+    const keys = this.input.keyboard.addKeys({
+    'w': Phaser.Input.Keyboard.KeyCodes.W,
+    'a': Phaser.Input.Keyboard.KeyCodes.A,
+    's': Phaser.Input.Keyboard.KeyCodes.S,
+    'd': Phaser.Input.Keyboard.KeyCodes.D,
+    });
+    
+    const pointer = this.input.addPointer();
+
     if (gameOver)
     {
         return;
     }
 
-    if (cursors.left.isDown)
+    if (cursors.left.isDown|| keys.a.isDown)
     {
-        player.setVelocityX(-160);
+        player.setVelocityX(-300);
 
         player.anims.play('left', true);
     }
-    else if (cursors.right.isDown)
+    else if (cursors.right.isDown|| keys.d.isDown)
     {
-        player.setVelocityX(160);
+        player.setVelocityX(300);
 
         player.anims.play('right', true);
     }
@@ -156,10 +167,45 @@ function update ()
         player.anims.play('turn');
     }
 
-    if (cursors.up.isDown && player.body.touching.down)
+    if (cursors.up.isDown|| keys.w.isDown && player.body.touching.down)
     {
         player.setVelocityY(-330);
-    }
+    } */
+    const cursors = this.input.keyboard.createCursorKeys();
+
+const keys = this.input.keyboard.addKeys({
+  'w': Phaser.Input.Keyboard.KeyCodes.W,
+  'a': Phaser.Input.Keyboard.KeyCodes.A,
+  's': Phaser.Input.Keyboard.KeyCodes.S,
+  'd': Phaser.Input.Keyboard.KeyCodes.D,
+});
+
+const pointer = this.input.addPointer();
+
+this.input.keyboard.on('keydown', (event) => {
+  if (cursors.left.isDown || keys.a.isDown) {
+    player.setVelocityX(-300);
+    player.anims.play('left', true);
+  } else if (cursors.right.isDown || keys.d.isDown) {
+    player.setVelocityX(300);
+    player.anims.play('right', true);
+  }
+});
+
+this.input.keyboard.on('keyup', (event) => {
+  player.setVelocityX(0);
+  player.anims.play('idle', true);
+});
+
+pointer.onDown = (pointer) => {
+  player.setVelocityX(pointer.position.x - player.x);
+  player.setVelocityY(pointer.position.y - player.y);
+};
+
+pointer.onUp = (pointer) => {
+  player.setVelocityX(0);
+  player.setVelocityY(0);
+};
 }
 
 function collectStar (player, star)
