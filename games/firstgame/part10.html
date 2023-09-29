@@ -25,6 +25,7 @@ var config = {
             debug: false
         }
     },
+    
     scene: {
         preload: preload,
         create: create,
@@ -44,7 +45,7 @@ var scoreText;
 var game = new Phaser.Game(config);
 
 function preload ()
-{
+{   this.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
     this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
@@ -73,6 +74,7 @@ function create ()
     player = this.physics.add.sprite(100, 450, 'dude');
 
     //  Player physics properties. Give the little guy a slight bounce.
+    player.body.setGravityY(500);
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
@@ -99,11 +101,16 @@ function create ()
 
     //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
-
+    keys = this.input.keyboard.addKeys({
+    'w': Phaser.Input.Keyboard.KeyCodes.W,
+    'a': Phaser.Input.Keyboard.KeyCodes.A,
+    's': Phaser.Input.Keyboard.KeyCodes.S,
+    'd': Phaser.Input.Keyboard.KeyCodes.D,
+    });
     //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
     stars = this.physics.add.group({
         key: 'star',
-        repeat: 11,
+        repeat: 1,
         setXY: { x: 12, y: 0, stepX: 70 }
     });
 
@@ -132,17 +139,6 @@ function create ()
 
 function update ()
 {
-    /* const cursors = this.input.keyboard.createCursorKeys();
-
-    const keys = this.input.keyboard.addKeys({
-    'w': Phaser.Input.Keyboard.KeyCodes.W,
-    'a': Phaser.Input.Keyboard.KeyCodes.A,
-    's': Phaser.Input.Keyboard.KeyCodes.S,
-    'd': Phaser.Input.Keyboard.KeyCodes.D,
-    });
-    
-    const pointer = this.input.addPointer();
-
     if (gameOver)
     {
         return;
@@ -150,13 +146,13 @@ function update ()
 
     if (cursors.left.isDown|| keys.a.isDown)
     {
-        player.setVelocityX(-300);
+        player.setVelocityX(-400);
 
         player.anims.play('left', true);
     }
     else if (cursors.right.isDown|| keys.d.isDown)
     {
-        player.setVelocityX(300);
+        player.setVelocityX(400);
 
         player.anims.play('right', true);
     }
@@ -169,43 +165,8 @@ function update ()
 
     if (cursors.up.isDown|| keys.w.isDown && player.body.touching.down)
     {
-        player.setVelocityY(-330);
-    } */
-    const cursors = this.input.keyboard.createCursorKeys();
-
-const keys = this.input.keyboard.addKeys({
-  'w': Phaser.Input.Keyboard.KeyCodes.W,
-  'a': Phaser.Input.Keyboard.KeyCodes.A,
-  's': Phaser.Input.Keyboard.KeyCodes.S,
-  'd': Phaser.Input.Keyboard.KeyCodes.D,
-});
-
-const pointer = this.input.addPointer();
-
-this.input.keyboard.on('keydown', (event) => {
-  if (cursors.left.isDown || keys.a.isDown) {
-    player.setVelocityX(-300);
-    player.anims.play('left', true);
-  } else if (cursors.right.isDown || keys.d.isDown) {
-    player.setVelocityX(300);
-    player.anims.play('right', true);
-  }
-});
-
-this.input.keyboard.on('keyup', (event) => {
-  player.setVelocityX(0);
-  player.anims.play('idle', true);
-});
-
-pointer.onDown = (pointer) => {
-  player.setVelocityX(pointer.position.x - player.x);
-  player.setVelocityY(pointer.position.y - player.y);
-};
-
-pointer.onUp = (pointer) => {
-  player.setVelocityX(0);
-  player.setVelocityY(0);
-};
+        player.setVelocityY(-500);
+    }
 }
 
 function collectStar (player, star)
@@ -228,9 +189,9 @@ function collectStar (player, star)
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
         var bomb = bombs.create(x, 16, 'bomb');
-        bomb.setBounce(1);
+        bomb.setBounce(0.9);
         bomb.setCollideWorldBounds(true);
-        bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+        bomb.setVelocity(Phaser.Math.Between(-50, 50), 20);
         bomb.allowGravity = false;
 
     }
