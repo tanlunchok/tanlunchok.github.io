@@ -1,3 +1,13 @@
+/*Lunchok's CSS for tanlunchok.github.io/cv */
+
 body p{
 font-weight: 300;
+}
+.skill .card{
+width: fit-content;
+margin: 0.1rem;
+background-color: var(--bs-secondary-bg);
+border: none;
+font-weight: 360;
+text-transform: capitalize;
 }
