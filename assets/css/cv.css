@@ -19,6 +19,22 @@ text-transform: capitalize;
     margin-bottom: 1em;
     line-height: .5rem;
 } */
+.accordion-button::after {
+    position: absolute;
+    right: 2%;
+    bottom: 0.5rem;
+    opacity: 0.3;
+    transition-property: transform, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+.accordion-button:not(.collapsed)::after{
+    
+    opacity:0;
+    transition-property: transform, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
 .accordion-button:not(.collapsed) {
     background-color: var(--bs-secondary-bg);
 }
