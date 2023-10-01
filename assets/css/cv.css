@@ -9,11 +9,13 @@ font-weight: 300;
 }
 .skill-section .card{
 width: fit-content;
-margin: 0.1rem;
+margin: 0.2rem;
 background-color: var(--bs-secondary-bg);
 border: none;
 font-weight: 360;
-text-transform: capitalize;
+text-transform: uppercase;
+padding: 0.4rem 0.8rem;
+font-size: small;
 }
 /* .edu-section p{
     margin-bottom: 1em;

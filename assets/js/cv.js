@@ -51,13 +51,7 @@ window.addEventListener('load', function() {
     }
   }); */
 
-/*   const darkModeSwitch = document.getElementById('dark-mode-switch');
-
-darkModeSwitch.addEventListener('click', function() {
-  document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
-}); */
-
-const darkModeSwitch = document.querySelector('.dark-mode-switch');
+const darkModeSwitch = document.getElementById('dark-mode-switch');
 
 darkModeSwitch.addEventListener('click', function() {
   document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
