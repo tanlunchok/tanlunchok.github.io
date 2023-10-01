@@ -51,3 +51,12 @@ text-transform: capitalize;
     width: 100%;
     mix-blend-mode:normal;
 }
+.lang-section .progress {
+    visibility: hidden;
+  }
+  
+  @media (min-width: 576px) {
+    .lang-section .progress {
+      visibility: visible;
+    }
+  }
