@@ -11,24 +11,23 @@
     <link rel="icon" href="images/chok.ico">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/cv.css">
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.5.1/anime.min.js">
+        import anime from 'animejs';
+
         window.addEventListener('load', function() {
         const progressBars = document.querySelectorAll('.progress');
 
         progressBars.forEach(progressBar => {
             // Create a new animation.
-            const animation = new TimelineMax();
-
-            // Add a keyframe to the animation to set the width of the progress bar to 0% at the beginning.
-            animation.to(progressBar.querySelector('.progress-bar'), 0.5, { width: 0 });
-
-            // Add a keyframe to the animation to set the width of the progress bar to the desired percentage at the end.
-            animation.to(progressBar.querySelector('.progress-bar'), 0.5, { width: progressBar.getAttribute('aria-valuenow') });
-
-            // Play the animation.
-            animation.play();
+            anime({
+            targets: progressBar.querySelector('.progress-bar'),
+            width: [0, progressBar.getAttribute('aria-valuenow')],
+            duration: 0.5,
+            easing: 'easeInOutQuad',
+            });
         });
         });
+        
     </script>
 </head>
 <body>
