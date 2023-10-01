@@ -15,11 +15,20 @@ border: none;
 font-weight: 360;
 text-transform: capitalize;
 }
-
-.language-section {
+/* .edu-section p{
+    margin-bottom: 1em;
+    line-height: .5rem;
+} */
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-secondary-bg);
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+.lang-section {
     position: relative;
 }
-.language-section span{
+.lang-section span{
     position: absolute;
     display: block;
     text-align: center;
