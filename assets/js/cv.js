@@ -1,4 +1,4 @@
-/* window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     const progressBars = document.querySelectorAll('.progress');
   
     progressBars.forEach(progressBar => {
@@ -15,8 +15,8 @@
         easing: 'easeInOutSine',
       });
     });
-  }); */
-  const progressBarSections = document.querySelectorAll('.progress');
+  });
+ /*  const progressBarSections = document.querySelectorAll('.progress');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -35,4 +35,4 @@
   
   progressBarSections.forEach(progressBarSection => {
     observer.observe(progressBarSection);
-  });
+  }); */
