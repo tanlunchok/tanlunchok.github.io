@@ -11,24 +11,22 @@
     <link rel="icon" href="images/chok.ico">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/cv.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.5.1/anime.min.js">
-        import anime from 'animejs';
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.5.1/anime.min.js"></script>
+    <script>import anime from 'animejs';
 
         window.addEventListener('load', function() {
-        const progressBars = document.querySelectorAll('.progress');
-
-        progressBars.forEach(progressBar => {
+          const progressBars = document.querySelectorAll('.progress');
+        
+          progressBars.forEach(progressBar => {
             // Create a new animation.
             anime({
-            targets: progressBar.querySelector('.progress-bar'),
-            width: [0, progressBar.getAttribute('aria-valuenow')],
-            duration: 0.5,
-            easing: 'easeInOutQuad',
+              targets: progressBar.querySelector('.progress-bar'),
+              width: [0, progressBar.getAttribute('aria-valuenow')],
+              duration: 0.5,
+              easing: 'easeInOutQuad',
             });
-        });
-        });
-        
-    </script>
+          });
+        });</script>
 </head>
 <body>
     <div class="container p-5 text-center col-lg-8 col-xl-6">   
@@ -94,21 +92,21 @@
         <div class="lang-section container">
             <h2 class="text-uppercase lead">Languages</h2>
 
-            <div class="progress mb-3">
-                <div class="progress-bar bg-secondary" style="width:70%">
-                    <span>English</span>
+            <div class="lang-section container">
+                <h2 class="text-uppercase lead">Languages</h2>
+              
+                <div class="progress mb-3 progress-bar-loading" data-percentage="70">
+                  <div class="progress-bar bg-secondary"><span>English</span></div>
                 </div>
-            </div>
-            <div class="progress mb-3">
-                <div class="progress-bar bg-secondary" style="width:90%">
-                    <span>Chinese</span>
+              
+                <div class="progress mb-3 progress-bar-loading" data-percentage="90">
+                  <div class="progress-bar bg-secondary"><span>Chinese</span></div>
                 </div>
-            </div>
-            <div class="progress mb-2">
-                <div class="progress-bar bg-secondary" style="width:75%">
-                    <span>Malay</span>
+              
+                <div class="progress mb-2 progress-bar-loading" data-percentage="75">
+                  <div class="progress-bar bg-secondary"><span>Malay</span></div>
                 </div>
-            </div>
+              </div>
         </div>
         <div class="container">
             <hr/>
@@ -117,13 +115,12 @@
         <div class="container">
             <hr/>
             <h2 class="text-uppercase lead">Contact</h2>
-            
+            <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Share
              </button>
         </div>
-                <!-- Button trigger modal -->
-        
+                
             <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
