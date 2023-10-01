@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/cv.css">
     <script src="assets/js/anime.min.js"></script>
     <script src="assets/js/cv.js"></script>
+    <script src="https://kit.fontawesome.com/429b3baa16.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container p-5 text-center col-lg-8 col-xl-6">   
@@ -98,13 +99,13 @@
             <hr/>
             <h2 class="text-uppercase lead">Contact</h2>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cvModal">
-                Get My CV
+            <button type="button" class="btn btn-primary text-uppercase btn-success" data-bs-toggle="modal" data-bs-target="#cvModal">
+                Get Lun Chok's CV
              </button>
         </div>
                 
             <!-- Modal -->
-        <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal modal-sm fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -112,17 +113,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="text-center col-6 mx-auto">
+                    <div class="text-center p-4 mx-auto">
                         <img  class="img-fluid" src="/images/CV-chok-qr.svg" class="rounded" alt="Lunchok's CV QR code">
                       </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                <button type="button" class="btn btn-primary">Share</button>
                 </div>
             </div>
             </div>
-        </div> 
+        </div>
+        <button class="btn btn-light dark-mode-switch">
+            <span class="sun">S</span>
+          </button>
     </div>
     <include src="/footer.html"></include>
 
