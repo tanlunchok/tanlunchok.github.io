@@ -16,21 +16,23 @@
       });
     });
   }); */
-  const progressBarSections = document.querySelectorAll('.lang-section');
+  const progressBarSections = document.querySelectorAll('.progress');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      anime({
-        targets: entry.target.querySelector('.progress-bar'),
-        width: entry.target.getAttribute('data-percentage'),
-        duration: 500,
-        easing: 'easeInOutSine',
-      });
-    }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          anime({
+            targets: entry.target.querySelector('.progress-bar'),
+            width: entry.target.getAttribute('data-percentage'),
+            duration: 500,
+            easing: 'easeInOutSine',
+          });
+        }, 500);
+      }
+    });
   });
-});
-
-progressBarSections.forEach(progressBarSection => {
-  observer.observe(progressBarSection);
-});
+  
+  progressBarSections.forEach(progressBarSection => {
+    observer.observe(progressBarSection);
+  });
