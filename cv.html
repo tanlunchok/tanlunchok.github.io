@@ -12,21 +12,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/cv.css">
     <script src="anime.min.js"></script>
-    <script>import anime from 'animejs';
-
-        window.addEventListener('load', function() {
-          const progressBars = document.querySelectorAll('.progress');
-        
-          progressBars.forEach(progressBar => {
-            // Create a new animation.
-            anime({
-              targets: progressBar.querySelector('.progress-bar'),
-              width: [0, progressBar.getAttribute('aria-valuenow')],
-              duration: 0.5,
-              easing: 'easeInOutQuad',
-            });
-          });
-        });</script>
+    <script src="assets/js/cv.js"></script>
 </head>
 <body>
     <div class="container p-5 text-center col-lg-8 col-xl-6">   
