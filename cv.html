@@ -11,6 +11,25 @@
     <link rel="icon" href="images/chok.ico">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/cv.css">
+    <script>
+        window.addEventListener('load', function() {
+        const progressBars = document.querySelectorAll('.progress');
+
+        progressBars.forEach(progressBar => {
+            // Create a new animation.
+            const animation = new TimelineMax();
+
+            // Add a keyframe to the animation to set the width of the progress bar to 0% at the beginning.
+            animation.to(progressBar.querySelector('.progress-bar'), 0.5, { width: 0 });
+
+            // Add a keyframe to the animation to set the width of the progress bar to the desired percentage at the end.
+            animation.to(progressBar.querySelector('.progress-bar'), 0.5, { width: progressBar.getAttribute('aria-valuenow') });
+
+            // Play the animation.
+            animation.play();
+        });
+        });
+    </script>
 </head>
 <body>
     <div class="container p-5 text-center col-lg-8 col-xl-6">   
