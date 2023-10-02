@@ -20,25 +20,32 @@ window.addEventListener('load', function() {
         accordionButton.classList.add('collapsed');
         accordionButton.setAttribute('aria-expanded', 'false');
       }); */
-      const accordionButton = document.querySelector('.accordion-button');
-      document.querySelectorAll('.accordion-button').forEach(accordionButton => {
-        accordionButton.addEventListener('click', function() {
-          if (this.classList.contains('collapsed')) {
-            this.classList.remove('collapsed');
-            this.setAttribute('aria-expanded', 'true');
-          } else {
-            this.classList.add('collapsed');
-            this.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
+
 
   });
  
 
-const darkModeSwitch = document.getElementById('dark-mode-switch');
+  document.ready(function() {
+    
+    const accordionButton = document.querySelector('.accordion-button');
+    document.querySelectorAll('.accordion-button').forEach(accordionButton => {
+      accordionButton.addEventListener('click', function() {
+        if (this.classList.contains('collapsed')) {
+          this.classList.remove('collapsed');
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          this.classList.add('collapsed');
+          this.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
 
-darkModeSwitch.addEventListener('click', function() {
-  document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
-});
-
+    const darkModeSwitch = document.getElementById('dark-mode-switch');
+  
+    darkModeSwitch.addEventListener('click', function() {
+      document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
+    });
+  
+  
+  
+  });
