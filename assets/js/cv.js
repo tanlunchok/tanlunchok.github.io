@@ -21,9 +21,8 @@ window.addEventListener('load', function() {
     const accordionButton = document.querySelector('#edu-accordion-button');
     const accordionContent = document.querySelector('#edu-accordion-content-1');
 
-    if (accordionContent.classList.contains('show')) {
-      accordionContent.classList.remove('show');
-    }  
+    if(accordionContent.classList.remove('show'))console.log("Show removed");
+
   };
   
   
