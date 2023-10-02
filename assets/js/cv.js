@@ -19,27 +19,32 @@ window.addEventListener('load', function() {
   });
   window.onload = (event) => {
     const accordionButton = document.querySelector('#edu-accordion-button');
+    const accordionContent = document.querySelector('#edu-accordion-content-1');
 
-    accordionButton.addEventListener('click', function() {
-      if (this.classList.contains('collapsed')) {
-        this.classList.remove('collapsed');
-        this.setAttribute('aria-expanded', 'true');
-      } else {
-        this.classList.add('collapsed');
-        this.setAttribute('aria-expanded', 'false');
-      }
-    });
+    if (accordionContent.classList.contains('show')) {
+      accordionContent.classList.remove('show');
+    }  
   };
   
   
   window.onload = (event) => {
     const darkModeSwitch = document.getElementById('dark-mode-switch');
+    const buttonIcon = darkModeSwitch.querySelector('i');
     darkModeSwitch.addEventListener('click', function() {
-      document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+
+      if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        darkModeSwitch.classList.remove('light-mode');
+        darkModeSwitch.classList.add('dark-mode');
+        buttonIcon.classList.remove('fa-sun');
+        buttonIcon.classList.add('fa-moon');
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        darkModeSwitch.classList.remove('dark-mode');
+        darkModeSwitch.classList.add('light-mode');
+        buttonIcon.classList.remove('fa-moon');
+        buttonIcon.classList.add('fa-sun');
+      }
     });
   };
-    
-/*     
-
-    
-   */
