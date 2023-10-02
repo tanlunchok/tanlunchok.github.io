@@ -38,6 +38,7 @@ letter-spacing: 0.1em;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
 }
+
 #edu-accordion-button:not(.collapsed) {
     background-color: var(--bs-secondary-bg)!important;
 }
