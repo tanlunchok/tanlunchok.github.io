@@ -15,44 +15,30 @@ window.addEventListener('load', function() {
         easing: 'easeInOutSine',
       });
     });
+
+    /* document.querySelectorAll('.accordion-button').forEach(accordionButton => {
+        accordionButton.classList.add('collapsed');
+        accordionButton.setAttribute('aria-expanded', 'false');
+      }); */
+      const accordionButton = document.querySelector('.accordion-button');
+      document.querySelectorAll('.accordion-button').forEach(accordionButton => {
+        accordionButton.addEventListener('click', function() {
+          if (this.classList.contains('collapsed')) {
+            this.classList.remove('collapsed');
+            this.setAttribute('aria-expanded', 'true');
+          } else {
+            this.classList.add('collapsed');
+            this.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
   });
- /*  const progressBarSections = document.querySelectorAll('.progress');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          anime({
-            targets: entry.target.querySelector('.progress-bar'),
-            width: entry.target.getAttribute('data-percentage'),
-            duration: 500,
-            easing: 'easeInOutSine',
-          });
-        }, 500);
-      }
-    });
-  });
-  
-  progressBarSections.forEach(progressBarSection => {
-    observer.observe(progressBarSection);
-  }); */
-
-/*   const darkModeSwitch = document.getElementById('dark-mode-switch');
-
-  darkModeSwitch.addEventListener('click', function() {
-    darkModeSwitch.classList.toggle('dark-mode-switch-active');
-  
-    if (darkModeSwitch.classList.contains('dark-mode-switch-active')) {
-      darkModeSwitch.querySelector('i').classList.remove('fa-sun');
-      darkModeSwitch.querySelector('i').classList.add('fa-moon');
-    } else {
-      darkModeSwitch.querySelector('i').classList.remove('fa-moon');
-      darkModeSwitch.querySelector('i').classList.add('fa-sun');
-    }
-  }); */
+ 
 
 const darkModeSwitch = document.getElementById('dark-mode-switch');
 
 darkModeSwitch.addEventListener('click', function() {
   document.documentElement.setAttribute('data-bs-theme', darkModeSwitch.classList.contains('dark-mode-switch-active') ? 'dark' : 'light');
 });
+
