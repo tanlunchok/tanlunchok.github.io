@@ -16,11 +16,6 @@ window.addEventListener('load', function() {
       });
     });
 
-    /* document.querySelectorAll('.accordion-button').forEach(accordionButton => {
-        accordionButton.classList.add('collapsed');
-        accordionButton.setAttribute('aria-expanded', 'false');
-      }); */
-
 
   });
  
