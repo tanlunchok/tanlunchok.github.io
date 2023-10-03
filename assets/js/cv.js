@@ -28,7 +28,7 @@ window.addEventListener('load', function() {
   
   window.onload = (event) => {
     const darkModeSwitch = document.getElementById('dark-mode-switch');
-    const buttonIcon = darkModeSwitch.querySelector('i');
+    const buttonIcon = darkModeSwitch.querySelector('svg');
     darkModeSwitch.addEventListener('click', function() {
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
 
@@ -36,14 +36,12 @@ window.addEventListener('load', function() {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
         darkModeSwitch.classList.remove('light-mode');
         darkModeSwitch.classList.add('dark-mode');
-        buttonIcon.classList.remove('fa-sun');
-        buttonIcon.classList.add('fa-moon');
+        buttonIcon.documentElement.setAttribute('data-icon','moon');
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
         darkModeSwitch.classList.remove('dark-mode');
         darkModeSwitch.classList.add('light-mode');
-        buttonIcon.classList.remove('fa-moon');
-        buttonIcon.classList.add('fa-sun');
+        buttonIcon.documentElement.setAttribute('data-icon','sun');
       }
     });
   };
