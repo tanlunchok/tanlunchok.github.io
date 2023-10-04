@@ -29,19 +29,26 @@ window.addEventListener('load', function() {
   window.onload = (event) => {
     const darkModeSwitch = document.getElementById('dark-mode-switch');
     const buttonIcon = darkModeSwitch.querySelector('svg');
+
+    if (currentTheme === 'dark') {
+      darkModeSwitch.classList.add('dark-mode');
+    } else {
+      darkModeSwitch.classList.add('light-mode');
+    }
+    
     darkModeSwitch.addEventListener('click', function() {
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-
+       
       if (currentTheme === 'light') {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
         darkModeSwitch.classList.remove('light-mode');
         darkModeSwitch.classList.add('dark-mode');
-        buttonIcon.documentElement.setAttribute('data-icon','moon');
+        buttonIcon.setAttribute('data-icon','moon');
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
         darkModeSwitch.classList.remove('dark-mode');
         darkModeSwitch.classList.add('light-mode');
-        buttonIcon.documentElement.setAttribute('data-icon','sun');
+        buttonIcon.setAttribute('data-icon','sun');
       }
     });
   };
