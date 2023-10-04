@@ -39,12 +39,12 @@ window.addEventListener('load', function() {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
         darkModeSwitch.classList.remove('light-mode');
         darkModeSwitch.classList.add('dark-mode');
-        if(buttonIcon.setAttribute('data-icon', 'moon'))console.log("moon");
+        if(buttonIcon.setAttribute('data-icon', 'moon'))console.log("moon"); else console.log("wrong moon");
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
         darkModeSwitch.classList.remove('dark-mode');
         darkModeSwitch.classList.add('light-mode');
-        if(buttonIcon.setAttribute('data-icon', 'sun'))console.log("sun");
+        if(buttonIcon.setAttribute('data-icon', 'sun'))console.log("sun"); else console.log("wrong sun")
       }
     });
   };
