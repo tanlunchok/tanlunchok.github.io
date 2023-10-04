@@ -17,24 +17,21 @@ window.addEventListener('load', function() {
 
 
   });
-  window.onload = (event) => {
-    const accordionButton = document.querySelector('#edu-accordion-button');
-    const accordionContent = document.querySelector('#edu-accordion-content-1');
-
-    if(accordionContent.classList.remove('show'))console.log("Show removed");
-
-  };
+  
   
   
   window.onload = (event) => {
     const darkModeSwitch = document.getElementById('dark-mode-switch');
-    const buttonIcon = darkModeSwitch.querySelector('svg');
+    const buttonIcon = document.getElementById('dark-mode-switch-icon');
+    const initialThemeCheck = document.documentElement.getAttribute('data-bs-theme');
+    const dataIconAttribute = darkModeSwitch.getAttribute('data-icon');
 
-    if (currentTheme === 'dark') {
+    if (initialThemeCheck === 'dark') {
       darkModeSwitch.classList.add('dark-mode');
     } else {
       darkModeSwitch.classList.add('light-mode');
     }
+   
     
     darkModeSwitch.addEventListener('click', function() {
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
@@ -43,12 +40,12 @@ window.addEventListener('load', function() {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
         darkModeSwitch.classList.remove('light-mode');
         darkModeSwitch.classList.add('dark-mode');
-        buttonIcon.setAttribute('data-icon','moon');
+        darkModeSwitch.setAttribute('data-icon', 'moon');
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
         darkModeSwitch.classList.remove('dark-mode');
         darkModeSwitch.classList.add('light-mode');
-        buttonIcon.setAttribute('data-icon','sun');
+        darkModeSwitch.setAttribute('data-icon', 'sun');
       }
     });
   };
