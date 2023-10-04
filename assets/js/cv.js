@@ -40,12 +40,12 @@ window.addEventListener('load', function() {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
         darkModeSwitch.classList.remove('light-mode');
         darkModeSwitch.classList.add('dark-mode');
-        darkModeSwitch.setAttribute('data-icon', 'moon');
+        dataIconAttribute.setAttribute('data-icon', 'moon');
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
         darkModeSwitch.classList.remove('dark-mode');
         darkModeSwitch.classList.add('light-mode');
-        darkModeSwitch.setAttribute('data-icon', 'sun');
+        dataIconAttribute.setAttribute('data-icon', 'sun');
       }
     });
   };
