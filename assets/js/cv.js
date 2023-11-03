@@ -39,14 +39,14 @@ window.addEventListener('load', function() {
        
       if (currentTheme === 'light') {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        darkModeSwitch.classList.remove('light-mode');
-        darkModeSwitch.classList.add('dark-mode');
+        darkModeSwitch.classList.toggle('light-mode');
+        svgElement.setAttribute('data-icon', 'moon');
         if(svgElement.setAttribute('data-icon', 'moon'))console.log("moon"); else console.log("wrong moon");
       } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
-        darkModeSwitch.classList.remove('dark-mode');
-        darkModeSwitch.classList.add('light-mode');
-        if(svgElement.setAttribute('data-icon', 'sun'))console.log("sun"); else console.log("wrong sun")
+        darkModeSwitch.classList.toggle('dark-mode');
+        svgElement.setAttribute('data-icon', 'sun');
+        if(svgElement.setAttribute('data-icon', 'sun'))console.log("sun"); else console.log("wrong sun");
       }
     });
   };
