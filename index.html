@@ -60,5 +60,17 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        // Load the footer using AJAX
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("footer-placeholder").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "footer.html", true);
+        xhttp.send();
+      </script>
 </body>
+<div id="footer-placeholder"></div>
 </html>
