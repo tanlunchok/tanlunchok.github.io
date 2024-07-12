@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" href="images/chok.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="assets/js/anime.min.js"></script>
+    <script src="assets/js/cv.js"></script>
+    <script src="https://kit.fontawesome.com/429b3baa16.js" crossorigin="anonymous"></script>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -15,11 +22,14 @@
     -->
     
     <script>
-        $(document).ready(function() {
-          $(".btn").click(function() {
-            window.location = $(this).attr("href");
-          });
+      $(document).ready(function() {
+        $(".btn").click(function() {
+          var href = $(this).attr("href");
+          if (href) {
+            window.location = href;
+          }
         });
+      });
     </script>
 </head>
 <body>
@@ -58,6 +68,10 @@
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
     </div>
+    <button id="dark-mode-switch" class="btn btn-light dark-mode-switch">
+      <!-- <i id="dark-mode-switch-icon" class="fa fa-sun"></i> -->
+      <i id="dark-mode-switch-icon" class="bi"></i>
+    </button>  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
