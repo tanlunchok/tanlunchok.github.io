@@ -27,7 +27,10 @@ window.addEventListener('load', function() {
     const initialThemeCheck = document.documentElement.getAttribute('data-bs-theme');
     let darkModeIcon = document.getElementById("dark-mode-switch-icon");
 
-
+    if (!initialThemeCheck) {
+      initialThemeCheck = 'light';
+    }
+    
     if (initialThemeCheck === 'dark') {
       darkModeSwitch.classList.add('dark-mode',);
       darkModeIcon.classList.add('bi-moon-fill');
