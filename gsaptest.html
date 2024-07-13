@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprite Animation on Scroll</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* Make sure there's enough scrolling space */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .sprite-container {
+      width: 100px; /* Width of a single frame */
+      height: 100px; /* Height of a single frame */
+      background-image: url('sprite.png'); /* Path to your sprite sheet */
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="sprite-container"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Number of frames in the sprite sheet
+  const frames = 10;
+  
+  // Animate the sprite
+  gsap.to(".sprite-container", {
+    backgroundPosition: `-${(frames - 1) * 100}px 0px`, // Move through all frames
+    ease: "steps(" + frames + ")", // Use steps ease to create frame-by-frame animation
+    scrollTrigger: {
+      trigger: ".sprite-container", // Element to trigger the animation
+      start: "top 75%", // When the top of the trigger hits 75% of the viewport
+      end: "bottom 25%", // When the bottom of the trigger hits 25% of the viewport
+      scrub: true, // Smoothly scrubs the animation
+      markers: true // Show markers for debugging
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
