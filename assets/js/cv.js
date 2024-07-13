@@ -23,14 +23,13 @@ window.addEventListener('load', function() {
   window.onload = (event) => {
     let darkModeSwitch = document.getElementById('dark-mode-switch');
     const buttonIcon = document.getElementById('dark-mode-switch-icon');
-    const svgElement = buttonIcon.querySelector('svg');
+    if (!document.documentElement.hasAttribute('data-bs-theme')) {
+      document.documentElement.setAttribute('data-bs-theme', 'light');
+    }
     const initialThemeCheck = document.documentElement.getAttribute('data-bs-theme');
     let darkModeIcon = document.getElementById("dark-mode-switch-icon");
 
-    if (!initialThemeCheck) {
-      initialThemeCheck = 'light';
-    }
-    
+
     if (initialThemeCheck === 'dark') {
       darkModeSwitch.classList.add('dark-mode',);
       darkModeIcon.classList.add('bi-moon-fill');
