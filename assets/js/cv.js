@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
       anime({
         targets: progressBarElement,
         width: percentage,
-        duration: 500,
+        duration: 200,
         easing: 'easeInOutSine',
       });
     });
