@@ -18,7 +18,7 @@ body, html {
     background-color: #ffffff; /* Change the color as needed */
     z-index: 9999;
     opacity: 1;
-    transition: opacity 0.3s ease; /* Fade out transition */
+    transition: opacity 0.5s ease; /* Fade out transition */
 }
 
 .progress-bar-container {
