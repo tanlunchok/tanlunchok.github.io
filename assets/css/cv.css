@@ -63,3 +63,7 @@ letter-spacing: 0.1em;
     padding-top:0;
 }
  
+#contact p a{
+    font-weight: lighter;
+    text-decoration: none;
+}
