@@ -71,6 +71,17 @@ letter-spacing: 0.1em;
 #work-accordion-content-1 .accordion-body{
     padding-top:0;
 }
+.date-chip.stacked {
+  text-align: center;
+}
+
+.date-chip.stacked small {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #6c757d;
+}
+
  
 #contact p a{
     font-weight: lighter;
