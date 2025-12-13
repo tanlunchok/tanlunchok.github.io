@@ -40,15 +40,20 @@ letter-spacing: 0.1em;
     box-shadow: none!important;
     color:unset!important;
 }
-
-#edu-accordion-button.accordion-button::after {
-    position: absolute;
-    right: 48.5%;
-    bottom: 0.4rem;
+.accordion-button::after {
     opacity: 0.3;
     transition-property: transform, opacity;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
+}
+#edu-accordion-button.accordion-button::after {
+    position: absolute;
+    right: 48.5%;
+    bottom: 0.4rem;
+}
+#work-accordion-button.accordion-button::after {
+    position: absolute;
+    right: 1rem;
 }
 .accordion-button:not(.collapsed)::after{
     opacity:0;
