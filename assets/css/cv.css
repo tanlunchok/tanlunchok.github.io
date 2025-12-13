@@ -4,6 +4,10 @@ body p {
     font-weight: 300;
 }
 
+.fs-09 {
+    font-size: 0.9rem !important;
+}
+
 .skill-section {
     display: flex;
     justify-content: center;
@@ -38,7 +42,7 @@ body p {
     line-height: .5rem;
 } */
 #edu-accordion-button,
-#work-accordion-button {
+.accordion-work button {
     background-color: unset !important;
     box-shadow: none !important;
     color: unset !important;
@@ -57,7 +61,7 @@ body p {
     bottom: 0.4rem;
 }
 
-#work-accordion-button.accordion-button::after {
+.accordion-work .accordion-button::after {
     position: absolute;
     right: 1rem;
 }
@@ -69,14 +73,14 @@ body p {
     transition-timing-function: ease-out;
 }
 
-#edu-accordion-button:not(.collapsed),
-#work-accordion-button:not(.collapsed) {
+.accordion-work .accordion-body,
+#work-accordion-content-1 .accordion-body {
     background-color: var(--bs-secondary-bg);
 }
 
-#edu-accordion-content-1 .accordion-body,
-#work-accordion-content-1 .accordion-body {
-    padding-top: 0;
+#accordionWork .accordion-body p {
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
 }
 
 .date-chip.stacked {
@@ -88,21 +92,6 @@ body p {
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     color: #6c757d;
-}
-
-.accordion-collapse.show+.accordion-header .date-chip.stacked .year-end {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.accordion-collapse.show+.accordion-header .date-chip.stacked .year-dash {
-    opacity: 0;
-}
-
-.date-chip.stacked .year-end,
-.date-chip.stacked .year-dash {
-    transition: all 0.3s ease;
 }
 
 #contact p a {
