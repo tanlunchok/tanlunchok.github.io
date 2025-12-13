@@ -1,33 +1,36 @@
 /*Lunchok's CSS for tanlunchok.github.io/cv */
 
-body p{
-font-weight: 300;
+body p {
+    font-weight: 300;
 }
+
 .skill-section {
     display: flex;
     justify-content: center;
 }
-.skill-section .card{
-width: fit-content;
-margin: 0.2rem;
-background-color: var(--bs-secondary-bg);
-border: none;
-font-weight: 360;
-text-transform: uppercase;
-padding: 0.4rem 0.8rem;
-font-size: smaller;
-letter-spacing: 0.1em;
+
+.skill-section .card {
+    width: fit-content;
+    margin: 0.2rem;
+    background-color: var(--bs-secondary-bg);
+    border: none;
+    font-weight: 360;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    font-size: smaller;
+    letter-spacing: 0.1em;
 }
 
 .lang-section {
     position: relative;
 }
-.lang-section span{
+
+.lang-section span {
     position: absolute;
     display: block;
     text-align: center;
     width: 100%;
-    mix-blend-mode:normal;
+    mix-blend-mode: normal;
 }
 
 /* .edu-section p{
@@ -36,27 +39,31 @@ letter-spacing: 0.1em;
 } */
 #edu-accordion-button,
 #work-accordion-button {
-    background-color: unset!important;
-    box-shadow: none!important;
-    color:unset!important;
+    background-color: unset !important;
+    box-shadow: none !important;
+    color: unset !important;
 }
+
 .accordion-button::after {
     opacity: 0.3;
     transition-property: transform, opacity;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
 }
+
 #edu-accordion-button.accordion-button::after {
     position: absolute;
     right: 48.5%;
     bottom: 0.4rem;
 }
+
 #work-accordion-button.accordion-button::after {
     position: absolute;
     right: 1rem;
 }
-.accordion-button:not(.collapsed)::after{
-    opacity:0;
+
+.accordion-button:not(.collapsed)::after {
+    opacity: 0;
     transition-property: transform, opacity;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
@@ -68,22 +75,37 @@ letter-spacing: 0.1em;
 }
 
 #edu-accordion-content-1 .accordion-body,
-#work-accordion-content-1 .accordion-body{
-    padding-top:0;
+#work-accordion-content-1 .accordion-body {
+    padding-top: 0;
 }
+
 .date-chip.stacked {
-  text-align: center;
+    text-align: center;
 }
 
 .date-chip.stacked small {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  color: #6c757d;
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: #6c757d;
 }
 
- 
-#contact p a{
+.accordion-collapse.show+.accordion-header .date-chip.stacked .year-end {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.accordion-collapse.show+.accordion-header .date-chip.stacked .year-dash {
+    opacity: 0;
+}
+
+.date-chip.stacked .year-end,
+.date-chip.stacked .year-dash {
+    transition: all 0.3s ease;
+}
+
+#contact p a {
     font-weight: lighter;
     text-decoration: none;
 }
