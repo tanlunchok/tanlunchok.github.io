@@ -299,6 +299,23 @@
     xhttp.open("GET", "footer.html", true);
     xhttp.send();
   </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  // Resume download button
+  const resumeBtn = document.getElementById("resume-btn");
+  if(resumeBtn) {
+    resumeBtn.addEventListener("click", function() {
+      const link = document.createElement('a');
+      link.href = 'documents/resume-2025.pdf';
+      link.download = 'resume-2025.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }
+});
+
+  </script>
 </body>
 <div id="footer-placeholder"></div>
 
