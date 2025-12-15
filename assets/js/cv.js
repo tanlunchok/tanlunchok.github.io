@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
     link.click();
 
     // Open print dialog
-    const printWindow = window.open('resume.pdf');
+    const printWindow = window.open('documents/resume-2025.pdf');
     printWindow.focus();
     printWindow.print();
 });
