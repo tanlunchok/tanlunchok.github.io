@@ -28,6 +28,21 @@
       height: auto;
     }
 
+    .row-images {
+      display: flex;
+      /* make images sit in a row */
+      justify-content: center;
+      /* center the row horizontally */
+      flex-wrap: wrap;
+      /* wrap to next line on smaller screens */
+    }
+
+    .row-images img {
+      max-width: 50%;
+      /* or a % if you prefer responsive */
+      height: auto;
+    }
+
     .logo-zo {
       max-width: 48px;
     }
@@ -71,12 +86,16 @@
     <img src="images/9.png" alt="Image 9">
     <img src="images/10.jpg" alt="Image 10">
     <img src="images/11.jpg" alt="Image 11">
+    <div class="row-images"> <img src="images/13-2.png" alt="Image 13-wire"></div>
+
     <img src="images/12.png" alt="Image 12">
     <img src="images/13.png" alt="Image 13">
-    <img src="images/13-2.png" alt="Image 13">
+
     <img src="images/14.jpg" alt="Image 14">
-    <img src="images/15.jpg" alt="Image 15">
-    <img src="images/16.jpg" alt="Image 16">
+    <div class="row-images">
+      <img src="images/15.jpg" alt="Image 15">
+      <img src="images/16.jpg" alt="Image 16">
+    </div>
     <img src="images/17.png" alt="Image 17">
     <img src="images/18.jpg" alt="Image 18">
     <img src="images/19.jpg" alt="Image 19">
@@ -85,17 +104,28 @@
     <img src="images/22.png" alt="Image 22">
     <img src="images/23.jpg" alt="Image 23">
     <img src="images/24.jpg" alt="Image 24">
-    <img src="images/25.png" alt="Image 25">
-    <img src="images/26.png" alt="Image 26">
+    <div class="row-images">
+      <img src="images/25.png" alt="Image 25">
+      <img src="images/26.png" alt="Image 26">
+    </div>
     <img src="images/27.png" alt="Image 27">
     <img src="images/28.png" alt="Image 28">
     <img src="images/29.jpg" alt="Image 29">
-    <img src="images/31.gif" alt="Image 31">
-    <img src="images/32.jpg" alt="Image 32">
-    <img src="images/33.jpg" alt="Image 33">
-    <img src="images/34.jpg" alt="Image 34">
+    <div class="row-images">
+      <img src="images/31.gif" alt="Image 31">
+    </div>
+    <div class="row-images">
+      <img src="images/32.jpg" alt="Image 32">
+      <img src="images/33.png" alt="Image 33">
+      <img src="images/34.jpg" alt="Image 34">
+    </div>
     <img src="images/35.jpg" alt="Image 35">
-    <img src="images/36.jpg" alt="Image 36">
+    <div class="row-images">
+      <img src="images/36.jpg" alt="Image 36">
+      <img src="images/38.jpg" alt="Image 38">
+    </div>
+    <img src="images/37.jpg" alt="Image 37">
+
   </div>
 </body>
 
