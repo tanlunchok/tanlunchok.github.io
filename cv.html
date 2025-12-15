@@ -235,16 +235,16 @@
     </div>
     <div class="explore-section container col-md-8 my-4">
       <h2 class="text-uppercase lead">Explore</h2>
-<a href="https://www.instagram.com/roon.zo/" target="_blank">
-  <i class="fab fa-instagram"></i> Instagram
-</a>
-<a href="https://tanlunchok.github.io/" target="_blank">
-  <i class="fas fa-globe"></i> Portfolio
-</a>
-<a href="https://www.instagram.com/lun.chok" target="_blank">
-  <i class="fas fa-paint-brush"></i>
- Illustration
-</a>
+      <a href="https://www.instagram.com/roon.zo/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://tanlunchok.github.io/" target="_blank">
+        <i class="fas fa-globe"></i> Portfolio
+      </a>
+      <a href="https://www.instagram.com/lun.chok" target="_blank">
+        <i class="fas fa-paint-brush"></i>
+        Illustration
+      </a>
     </div>
     <div class="container my-4" id="contact">
       <h2 class="text-uppercase lead">Contact</h2>
@@ -255,10 +255,17 @@
         Get Lun Chok's CV
       </button>
     </div>
-    <button id="dark-mode-switch" class="btn btn-light dark-mode-switch btn-glow">
-      <!-- <i id="dark-mode-switch-icon" class="fa fa-sun"></i> -->
-      <i id="dark-mode-switch-icon" class="bi"></i>
-    </button>
+    <!-- Floating Button Group -->
+    <div class="floating-buttons">
+      <button id="dark-mode-switch" class="btn btn-light dark-mode-switch btn-glow">
+        <!-- <i id="dark-mode-switch-icon" class="fa fa-sun"></i> -->
+        <i id="dark-mode-switch-icon" class="bi"></i>
+      </button>
+    <button id="print-resume" class="btn  btn-light floating-btn" title="Print Resume">
+    <i class="fas fa-file-pdf"></i>
+  </button>
+    </div>
+
     <!-- Modal -->
     <div class="modal modal-sm fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -281,7 +288,7 @@
     </div>
 
   </div>
- <!--  <script>
+  <!--  <script>
     // Load the footer using AJAX
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {

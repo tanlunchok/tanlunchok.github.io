@@ -49,3 +49,16 @@ window.addEventListener('load', function() {
         darkModeIcon.classList.toggle('bi-moon-fill');
     });
   };
+
+  document.getElementById("resume-btn").addEventListener("click", function() {
+    // Download PDF
+    const link = document.createElement('a');
+    link.href = 'documents/resume-2025.pdf';
+    link.download = 'documents/resume-2025.pdf';
+    link.click();
+
+    // Open print dialog
+    const printWindow = window.open('resume.pdf');
+    printWindow.focus();
+    printWindow.print();
+});

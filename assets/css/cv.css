@@ -100,15 +100,8 @@ body p {
 }
 
 .btn-glow {
-
     box-shadow: 0 0 0 rgba(255, 255, 255, 0);
     transition: box-shadow 1s ease;
-    position: fixed;
-    right: 1rem;
-    top: 2rem;
-    transform: translateY(-50%);
-    z-index: 1050;
-    border: none;
 }
 
 .btn-glow:hover {
@@ -133,7 +126,24 @@ body p {
         box-shadow: 0 0 5px #0d6efd;
     }
 }
-.explore-section a{
-    text-decoration:none;
-    margin:0 0.4rem 0 0.4rem;
+
+.explore-section a {
+    text-decoration: none;
+    margin: 0 0.4rem 0 0.4rem;
+}
+
+.floating-buttons {
+    position: fixed;
+    right: 1rem;
+    top: 90%;
+    transform: translateY(-50%);
+    z-index: 1050;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    /* stack vertically */
+    gap: 10px;
+    /* space between buttons */
+    z-index: 1000;
+    opacity: 0.5;
 }
