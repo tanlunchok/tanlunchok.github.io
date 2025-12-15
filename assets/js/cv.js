@@ -50,15 +50,11 @@ window.addEventListener('load', function() {
     });
   };
 
-  document.getElementById("resume-btn").addEventListener("click", function() {
-    // Download PDF
+ document.getElementById("resume-btn").addEventListener("click", function() {
     const link = document.createElement('a');
-    link.href = 'documents/resume-2025.pdf';
-    link.download = 'documents/resume-2025.pdf';
+    link.href = 'documents/resume-2025.pdf'; // make sure path is correct
+    link.download = '/documents/resume-2025.pdf'; // file name for download
+    document.body.appendChild(link);   // required for Firefox
     link.click();
-
-    // Open print dialog
-    const printWindow = window.open('documents/resume-2025.pdf');
-    printWindow.focus();
-    printWindow.print();
+    document.body.removeChild(link);
 });
