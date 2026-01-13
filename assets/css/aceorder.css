@@ -16,7 +16,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
-    margin-top: auto;
+    margin-top: 0; /* prevents page jittering during input on large screens */
 }
 
 @media (min-width: 768px) {
